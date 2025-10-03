@@ -66,3 +66,6 @@
  * - A função seja exportada com module.exports
  */
 
+function manipulacaoArrayLinguagens(){
+    
+}
