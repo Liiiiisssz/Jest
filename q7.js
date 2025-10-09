@@ -29,3 +29,15 @@
  * - Use métodos como filter(), includes(), ou Set para implementar
  * - A função seja exportada com module.exports
  */
+
+function elementosComuns(array1, array2){
+    let comuns = []
+    array1.forEach(n => {
+        if(array2.includes(n)){
+            comuns.push(n)
+        }
+    });
+    return comuns
+}
+
+module.exports = elementosComuns;

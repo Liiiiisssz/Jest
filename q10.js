@@ -57,3 +57,28 @@
  * - Use métodos como slice(), shift(), pop(), unshift(), push(), reduce(), Math.max(), filter()
  * - A função seja exportada com module.exports
  */
+
+function manipularArray(array){
+    let novoArray = [...array]
+    novoArray.shift()
+    novoArray.pop()
+    novoArray.unshift(0)
+    novoArray.push(10)
+
+    let soma = novoArray.reduce(function(valor1, valor2){
+        return valor1 + valor2
+    }, 0)
+
+    let maiorNumero = Math.max(...novoArray)
+    let numerosPares = novoArray.filter(n =>
+        n % 2 === 0)
+    
+    return {
+        arrayCopia: novoArray,
+        soma: soma,
+        maiorNumero: maiorNumero,
+        numerosPares: numerosPares
+    }
+}
+
+module.exports = manipularArray;

@@ -40,3 +40,21 @@
  * - A função seja exportada com module.exports
  */
 
+function encontrarDuplicados(string){
+    let s = string.toLowerCase()
+
+    let contagem = {}
+    for(const char of s){
+        contagem[char] = (contagem[char] || 0) + 1
+    }
+
+    let duplicados = {}
+    for(const char in contagem){
+        if(contagem[char] >= 2){
+            duplicados[char] = contagem[char]
+        }
+    }
+    return duplicados
+}
+
+module.exports = encontrarDuplicados;

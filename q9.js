@@ -41,3 +41,26 @@
  * - A função seja exportada com module.exports
  */
 
+function criarEstudante(){
+    let estudante ={
+        nome: 'Elis',
+        idade: 17,
+        nota1: null,
+        nota2: null,
+        nota3: null,
+        media: function(){
+            return (this.nota1 + this.nota2 + this.nota3) / 3
+        },
+        situacao: function(){
+            if(this.media() >= 7){
+                return "Aprovado"
+            } else {
+                return "Reprovado"
+            }
+        }
+    }
+
+    return estudante
+}
+
+module.exports = criarEstudante;

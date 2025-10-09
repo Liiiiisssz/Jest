@@ -66,6 +66,48 @@
  * - A função seja exportada com module.exports
  */
 
+const anosLancamento = {
+     JavaScript: 1995,
+     Python: 1991,
+     Java: 1995,
+     "C++": 1985,
+     Ruby: 1995,
+     TypeScript: 2012,
+     Go: 2009,
+     Rust: 2010
+};
+ 
 function manipulacaoArrayLinguagens(){
-    
+    let linguagens = ["JavaScript", "Python", "Java"]
+    console.log(linguagens)
+
+    linguagens.push("C++", "Ruby")
+    console.log(linguagens)
+
+    linguagens.shift()
+    console.log(linguagens)
+
+    linguagens.splice(1, 0, "TypeScript", "Go")
+    console.log(linguagens)
+
+    linguagens.unshift("Rust")
+    console.log(linguagens)
+
+    const tamanhoArray = linguagens.length
+    console.log(tamanhoArray)
+
+    let versoes = linguagens.map(linguagem => anosLancamento[linguagem])
+    console.log(versoes)
+
+    let modernas = linguagens.filter(linguagem => anosLancamento[linguagem] > 2000)
+    console.log(modernas)
+
+    return {
+        linguagensFinal: linguagens,
+        tamanhoArray: tamanhoArray,
+        versoes: versoes,
+        modernas: modernas
+    }
 }
+
+module.exports = manipulacaoArrayLinguagens;
